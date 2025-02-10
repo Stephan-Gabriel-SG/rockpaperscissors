@@ -13,6 +13,24 @@ function updateScoreAndRound(){
     roundContainer.innerText = round
 }
 
+function updateBattleChoice(humanChoice, computerChoice){
+    const humanImageContainer = document.getElementById('humanChoice')
+    const computerImageContainer = document.getElementById('computerChoice')
+
+    setTimeout(() => {    
+        humanImageContainer.classList.remove('humanChoiceAnimation');
+        computerImageContainer.classList.remove('computerChoiceAnimation');
+    }, 500);
+
+    // Changer les images avant de réappliquer l'animation
+    humanImageContainer.setAttribute('src', `images/${RPS[humanChoice]}-h.png`);
+    computerImageContainer.setAttribute('src', `images/${RPS[computerChoice]}.png`);
+
+    humanImageContainer.classList.add('humanChoiceAnimation');
+    computerImageContainer.classList.add('computerChoiceAnimation');
+    
+}
+
 function getComputerChoice(){
     return Math.floor( (Math.random() + Math.random()) / 2 * 3)
 }
@@ -20,7 +38,7 @@ function getComputerChoice(){
 function playRound(humanChoice) {
     const computerChoice = getComputerChoice();
     const messageContainer = document.getElementById('message')
-    
+    updateBattleChoice(humanChoice,computerChoice)
     if(humanChoice!==computerChoice)
     {
         let round=[humanChoice, computerChoice]
@@ -36,6 +54,7 @@ function playRound(humanChoice) {
             computerScore++
         }
     }
+
     else{
         messageContainer.innerText =`Equality`
         console.log(`Equality`)
