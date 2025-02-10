@@ -20,36 +20,47 @@
                             <th>Computer</th>
                         </tr>
                         <tr>
-                            <td id="humanScore">1</td>
+                            <td id="humanScore">0</td>
                             <td id="computerScore">0</td>
                         </tr>
                     </table>
                 </div>
             </div>
             <div class="battlechoice">
-                <div class="humanChoice" id="humanChoice"></div>
+                <img class="humanChoice" id="humanChoice" class="humanChoiceAnimation" src="" alt="">
                 <span class="versus">VS</span>
-                <div class="computerChoice" id="computerChoice"></div>
+                <img class="computerChoice" id="computerChoice" class="computerChoiceAnimation" src="" alt="">
             </div>
-            <span id="message">
-                You win or you lose hihi
+            <span id="message" class="messageInfo">
             </span>
             <div class="choice">
-                <div id="rock" class="box">
+                <div id="rock" class="box" onclick="playRound(0)">
                     <img src="images/rock.png" alt="Rock">
                     <span>Rock</span>
                 </div>
-                <div id="paper" class="box">
+                <div id="paper" class="box" onclick="playRound(1)">
                     <img src="images/paper.png" alt="Paper">
                     <span>Paper</span>
                 </div>
-                <div id="scissors" class="box">
+                <div id="scissors" class="box" onclick="playRound(2)">
                     <img src="images/scissors.png" alt="Scissors">
                     <span>Scissors</span>
                 </div>
         </div>
     </div>
-    
+    <footer>
+        <p>&copy; 2025 by <a href="https://github.com/Stephan-Gabriel-SG" target="_blank" class="footer-link">
+            <img src="icons/github.svg" alt="GitHub" class="footer-icon"> NANDRASANTSOA Stéphan Gabriel</a>
+        </p>
+    </footer>
+    <dialog id="mymodal">
+        <div class="modalcontainer">
+            <span id="modalTitle"></span>
+            <p id="modalText"></p>
+            <button id="modalButton"></button>
+        </div>
+    </dialog>
     <script text="text/javascript" src="js.js"></script>
 </body>
 </html>
+
