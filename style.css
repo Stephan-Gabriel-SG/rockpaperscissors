@@ -6,9 +6,16 @@
 * {
     font-family: myfont, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 22px;
+    --w:#F3FEB8;
+    --y:#FFDE4D;
+    --o:#FFB22C;
+    --r:#FF4C4C;
+}
+body{
+    margin: 0;
 }
 
-.container, .choice, .box{
+.container, .choice, .box, .battlechoice{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,13 +24,17 @@
 }
 
 .header{
-    padding : 15px;
+    padding : 25px 0;
     width: 100%;
-    border-bottom: 2px solid black ;
+    background: var(--o);
+    color: var(--w);
+}
+
+span.title {
+    padding-left: 10%;
 }
 
 .infopanel{
-    /* background-color: red; */
     text-align: center;
 }
 
@@ -39,7 +50,6 @@
     flex-wrap: wrap;
     gap: 35px;
     flex-direction: initial;
-    /* background-color: orange; */
 }
 
 .box {
@@ -50,7 +60,7 @@
 
 .box:hover{
     transform: scale(1.2);
-    color: red;
+    color:var(--r);
 }
 
 img{
@@ -61,10 +71,88 @@ img{
     width: 45px;
 }
 
+.battlechoice{
+    flex-direction: row;
+    height: 100px;
+}
+
+.messageInfo{
+    height: 25px;
+    animation: zoom .4s ease-out forwards;
+}
+
+/* Animation déclenchée */
+.humanChoiceAnimation {
+    transform: rotate(90deg) scale(1.2);
+    animation: spinSlowDown 3s ease-out forwards;
+}
+
+.computerChoiceAnimation {
+    transform: rotate(270deg) scale(1.2);
+    animation: spinSlowDownReverse 3s ease-out forwards;
+}
+
+
 img#humanChoice {
     transform: rotate(90deg);
+    transition: .3s;
 }
 
 img#computerChoice {
     transform: rotate(270deg);
+    transition: .3s;
+}
+
+@keyframes zoom {
+    0%{
+        transform: scale(1.2);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes spinSlowDown {
+    0% {
+        transform: rotate(0deg);
+        animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    }
+    50% {
+        transform: rotate(720deg); /* Tourne vite au début */
+        animation-timing-function: cubic-bezier(0.3, 0.7, 0.5, 1);
+    }
+    100% {
+        transform: rotate(1080deg); /* Ralentit vers la fin */
+    }
+}
+
+@keyframes spinSlowDownReverse {
+    0% {
+        transform: rotate(0deg);
+        animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    }
+    50% {
+        transform: rotate(-720deg); /* Tourne vite au début */
+        animation-timing-function: cubic-bezier(0.3, 0.7, 0.5, 1);
+    }
+    100% {
+        transform: rotate(-1080deg); /* Ralentit vers la fin */
+    }
+}
+
+/* modal */
+dialog#mymodal {
+    position: absolute;
+    display: none;
+    border-radius: 15px;
+    top: 100px;
+    width: 250px;
+    height: 250px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
 }
