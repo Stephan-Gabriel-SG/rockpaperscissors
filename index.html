@@ -4,36 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div class="header"><span class="title">Rock Paper Scissors</span></div>
-        <div class="gameboard">
             <div class="infopanel">
                 <div class="round">
-
+                    Round <span id="roundNumber">1</span>
                 </div>
                 <div class="score">
-
+                    <table>
+                        <tr>
+                            <th>You</th>
+                            <th>Computer</th>
+                        </tr>
+                        <tr>
+                            <td id="humanScore">1</td>
+                            <td id="computerScore">0</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <div class="battlechoice">
-
+                <div class="humanChoice" id="humanChoice"></div>
+                <span class="versus">VS</span>
+                <div class="computerChoice" id="computerChoice"></div>
             </div>
+            <span id="message">
+                You win or you lose hihi
+            </span>
             <div class="choice">
                 <div id="rock" class="box">
-                    <img src="" alt="">
+                    <img src="images/rock.png" alt="Rock">
                     <span>Rock</span>
                 </div>
                 <div id="paper" class="box">
-                    <img src="" alt="">
+                    <img src="images/paper.png" alt="Paper">
                     <span>Paper</span>
                 </div>
                 <div id="scissors" class="box">
-                    <img src="" alt="">
+                    <img src="images/scissors.png" alt="Scissors">
                     <span>Scissors</span>
                 </div>
-            </div>
         </div>
     </div>
     
