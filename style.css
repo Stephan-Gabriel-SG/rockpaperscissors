@@ -28,7 +28,7 @@ body{
 .header{
     padding : 25px 0;
     width: 100%;
-    font-family: myboldfont;
+    font-weight: bold;
     background: var(--w);
     color: var(--r);
     box-shadow: 0px 1px 4px 0px #cfcfcf;
@@ -198,6 +198,7 @@ button#modalButton:hover{
 /* footer */
 footer{
     width: 100%;
+    flex-direction: row;
     color: var(--w);
     bottom: 0;
     position: absolute;
@@ -206,10 +207,15 @@ footer{
     justify-content: center;
     background: var(--bl);
 }
+
 footer p{
     font-size: medium;
+    display: flex;
+    gap: 8px;
 }
+
 footer a {
+    display: flex;
     text-decoration: none;
     color: var(--w);
     transition: .3s;
