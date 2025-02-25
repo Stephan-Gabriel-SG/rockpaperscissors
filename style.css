@@ -11,6 +11,10 @@
     --y:#FFDE4D;
     --o:#FD8B51;
     --r:#CB6040;
+
+    -webkit-tap-highlight-color: transparent;
+    -moz-tap-highlight-color: transparent;
+    -ms-tap-highlight-color: transparent;
 }
 body{
     margin: 0;
@@ -164,7 +168,7 @@ dialog#mymodal {
     position: absolute;
     display: none;
     border-radius: 15px;
-    top: 100px;
+    top: 25vh;
     width: 250px;
     height: 250px;
     flex-direction: column;
