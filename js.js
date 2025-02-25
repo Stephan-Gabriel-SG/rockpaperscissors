@@ -75,8 +75,8 @@ function updateBattleChoice(humanChoice, computerChoice){
     }, 500);
 
     // Changer les images avant de réappliquer l'animation
-    humanImageContainer.setAttribute('src', `images/${RPS[humanChoice]}-h.png`);
-    computerImageContainer.setAttribute('src', `images/${RPS[computerChoice]}.png`);
+    humanImageContainer.setAttribute('src', `images/${RPS[humanChoice].toLocaleLowerCase()}-h.png`);
+    computerImageContainer.setAttribute('src', `images/${RPS[computerChoice].toLocaleLowerCase()}.png`);
 
     humanImageContainer.classList.add('humanChoiceAnimation');
     computerImageContainer.classList.add('computerChoiceAnimation');
